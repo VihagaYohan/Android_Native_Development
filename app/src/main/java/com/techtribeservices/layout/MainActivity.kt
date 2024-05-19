@@ -2,6 +2,7 @@ package com.techtribeservices.layout
 
 import android.graphics.Color
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
     lateinit var myText: TextView
+    lateinit var myButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +28,12 @@ class MainActivity : AppCompatActivity() {
         myText.setText("This is a title")
         myText.setOnClickListener {
             myText.setTextColor(Color.RED)
+        }
+
+        myButton = findViewById(R.id.button)
+        myButton.setOnClickListener {
+            myText.setTextColor(Color.GREEN)
+            myText.setText("Thank you")
         }
     }
 }
